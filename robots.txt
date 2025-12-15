@@ -1,0 +1,8 @@
+# robots.txt for your site
+# Replace "https://luxury-motors-eight.vercel.app/" with your real site URL if desired
+
+User-agent: *
+Allow:
+
+# Sitemap location (use absolute URL when you deploy)
+Sitemap: https://luxury-motors-eight.vercel.app/sitemap.xml
