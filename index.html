@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Motors | Digital Marketing Project</title>
+    <meta
+      name="description"
+      content="Discover the finest luxury and performance vehicles at Luxury Motors. Explore our premium collection, advanced features, and exclusive deals."
+    />
+    <style>
+      :root {
+        --primary: #1a1a2e;
+        --secondary: #16213e;
+        --accent: #0f3460;
+        --highlight: #e94560;
+        --light: #f5f5f5;
+        --text: #333333;
+        --text-light: #ffffff;
+        --shadow: rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--highlight);
+        color: var(--text-light);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn:hover {
+        background-color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--highlight);
+      }
+
+      header {
+        background-color: var(--primary);
+        color: var(--text-light);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px var(--shadow);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .logo span {
+        color: var(--highlight);
+      }
+
+      nav ul {
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--highlight);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--highlight);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .mains{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+      .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 70px;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(26,26,46,0.6), rgba(26,26,46,0.6));
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: 60vh;
+        }
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.8;
+      }
+
+ 
+      .featured-cars {
+        padding: 100px 0;
+        background-color: var(--light);
+      }
+
+      .cars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .car-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .car-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .car-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .car-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .car-card:hover .car-img img {
+        transform: scale(1.1);
+      }
+
+      .car-info {
+        padding: 20px;
+      }
+
+      .car-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .car-specs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: var(--text);
+      }
+
+      .car-price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--highlight);
+        margin-bottom: 15px;
+      }
+
+      .video-showcase {
+        padding: 100px 0;
+        background-color: var(--secondary);
+        color: var(--text-light);
+      }
+
+      .video-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .video-card {
+        background-color: var(--primary);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #000;
+      }
+
+      .video-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background-color: rgba(233, 69, 96, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+
+      .play-button::after {
+        content: "▶";
+        color: white;
+        font-size: 30px;
+        margin-left: 5px;
+      }
+
+      .video-wrapper:hover .play-button {
+        background-color: var(--highlight);
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: none;
+      }
+
+      .video-wrapper.playing iframe {
+        display: block;
+      }
+
+      .video-wrapper.playing img {
+        display: none;
+      }
+
+      .video-wrapper.playing .play-button {
+        display: none;
+      }
+
+      .video-info {
+        padding: 20px;
+      }
+
+      .video-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .about {
+        padding: 100px 0;
+        background-color: var(--light);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      .contact {
+        padding: 100px 0;
+        background-color: var(--secondary);
+        color: var(--text-light);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .contact-details {
+        margin-bottom: 30px;
+      }
+
+      .contact-details p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-details i {
+        margin-right: 10px;
+        color: var(--highlight);
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+      }
+
+      .contact-form textarea {
+        height: 150px;
+        resize: vertical;
+      }
+      footer {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 50px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--highlight);
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a:hover {
+        color: var(--highlight);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--accent);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--highlight);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 992px) {
+        .about-content,
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: block;
+        }
+
+        nav ul {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background-color: var(--primary);
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 50px;
+          transition: left 0.3s ease;
+        }
+
+        nav ul.active {
+          left: 0;
+        }
+
+        nav ul li {
+          margin: 15px 0;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="logo">Luxury<span>Motors</span></div>
+        <div class="mobile-menu">☰</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-media">
+        <img src="Fotter Image.png" alt="Luxury car on road" />
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <h1>Experience Automotive Excellence</h1>
+        <p>
+          Discover the finest collection of luxury and performance vehicles,
+          crafted for those who demand the extraordinary.
+        </p>
+        <a href="#featured" class="btn">Explore Collection</a>
+      </div>
+    </section>
+
+   
+    <section class="featured-cars" style="background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 80px 0; color: var(--text-light);">
+      <div class="container">
+        <div class="section-title" style="color: var(--text-light);">
+          <h2 style="color: var(--text-light);">Our Latest Video</h2>
+          <p style="color: rgba(255,255,255,0.8);">Watch our exclusive vehicle showcase</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <video id="localVideo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none;" controls>
+              <source src="WhatsApp Video 2025-11-11 at 22.20.01_4faa66d2.mp4" type="video/mp4" loading="lazy">
+              Your browser does not support the video tag.
+            </video>
+          
+            <div id="playBtn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background-color: rgba(233, 69, 96, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10;">
+              <span style="color: white; font-size: 35px; margin-left: 5px;">▶</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-cars" id="featured">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Vehicles</h2>
+          <p>Explore our premium selection of luxury automobiles</p>
+        </div>
+        <div class="cars-grid">
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Porsche 911 Turbo.png"                                         
+                alt="Luxury Sports Car"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Porsche 911 Turbo</h3>
+              <div class="car-specs">
+                <span>Engine: 3.8L Twin-Turbo</span>
+                <span>0-60: 2.6s</span>
+              </div>
+              <div class="car-price">$170,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Mercedes-Benz S-Class.png"
+                alt="Luxury Sedan"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Mercedes-Benz S-Class</h3>
+              <div class="car-specs">
+                <span>Engine: 4.0L V8</span>
+                <span>Luxury: Premium</span>
+              </div>
+              <div class="car-price">$115,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Range Rover Autobiography.png"
+                alt="Luxury SUV"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Range Rover Autobiography</h3>
+              <div class="car-specs">
+                <span>Engine: 4.4L V8</span>
+                <span>Seats: 5</span>
+              </div>
+              <div class="car-price">$145,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 BMW M440i xDrive.png"
+                alt="BMW M Series"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 BMW M440i xDrive</h3>
+              <div class="car-specs">
+                <span>Engine: 3.0L Twin-Turbo</span>
+                <span>0-60: 3.9s</span>
+              </div>
+              <div class="car-price">$65,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Audi RS 6 Avant.png"
+                alt="Audi RS"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Audi RS 6 Avant</h3>
+              <div class="car-specs">
+                <span>Engine: 4.0L Twin-Turbo</span>
+                <span>Power: 591 HP</span>
+              </div>
+              <div class="car-price">$125,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Lamborghini Revuelto.png"
+                alt="Lamborghini"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Lamborghini Revuelto</h3>
+              <div class="car-specs">
+                <span>Engine: 6.5L V12</span>
+                <span>0-60: 2.5s</span>
+              </div>
+              <div class="car-price">$580,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Ferrari F8 Tributo.png"
+                alt="Ferrari"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Ferrari F8 Tributo</h3>
+              <div class="car-specs">
+                <span>Engine: 3.9L Twin-Turbo</span>
+                <span>Power: 710 HP</span>
+              </div>
+              <div class="car-price">$280,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Rolls-Royce Ghost.png"
+                alt="Rolls Royce"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Rolls-Royce Ghost</h3>
+              <div class="car-specs">
+                <span>Engine: 6.7L Twin-Turbo</span>
+                <span>Luxury: Ultimate</span>
+              </div>
+              <div class="car-price">$320,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Bentley Continental GT.png"
+                alt="Bentley Continental"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Bentley Continental GT</h3>
+              <div class="car-specs">
+                <span>Engine: 6.0L Twin-Turbo</span>
+                <span>0-60: 3.5s</span>
+              </div>
+              <div class="car-price">$235,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023-Jaguar-F-Type-R.png"
+                alt="Jaguar F-Type"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Jaguar F-Type R</h3>
+              <div class="car-specs">
+                <span>Engine: 5.0L Supercharged</span>
+                <span>Power: 575 HP</span>
+              </div>
+              <div class="car-price">$105,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+            <div class="car-img">
+              <img
+                src="2023 Tesla Model S Plaid.png"
+                alt="Tesla Model S"
+                loading="lazy"
+              />
+            </div>
+            <div class="car-info">
+              <h3>2023 Tesla Model S Plaid</h3>
+              <div class="car-specs">
+                <span>Motor: Electric Tri-Motor</span>
+                <span>0-60: 1.99s</span>
+              </div>
+              <div class="car-price">$105,000</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Luxury Motors</h2>
+          <p>Our commitment to automotive excellence</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Redefining Luxury Automotive Experience</h2>
+            <p>
+              At Luxury Motors, we believe that driving should be more than just
+              transportation—it should be an experience. For over two decades,
+              we've been providing discerning clients with the finest selection
+              of luxury and performance vehicles.
+            </p>
+            <p>
+              Our team of automotive experts carefully curates each vehicle in
+              our collection, ensuring that every car meets our rigorous
+              standards for quality, performance, and luxury.
+            </p>
+            <p>
+              From classic elegance to cutting-edge technology, we offer a
+              diverse range of premium automobiles to suit every taste and
+              lifestyle.
+            </p>
+            <a href="#contact" class="btn">Contact Us</a>
+          </div>
+          <div class="about-image">
+            <img
+              src="2023 Audi RS 6 Avant.png"
+              alt="Luxury Motors Showroom" loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with our luxury automotive specialists</p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Visit Our Showroom</h3>
+            <div class="contact-details">
+              <p><i>📍</i> 123 Luxury Avenue, Premium District, City</p>
+              <p><i>📞</i> +1 (555) 123-4567</p>
+              <p><i>✉️</i> info@luxurymotors.com</p>
+              <p><i>🕒</i> Mon-Sat: 9AM - 7PM, Sun: 11AM - 5PM</p>
+            </div>
+            <div class="social-links">
+              <a href="#"><i>f</i></a>
+              <a href="#"><i>t</i></a>
+              <a href="#"><i>in</i></a>
+              <a href="#"><i>ig</i></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Your Phone" />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Luxury Motors</h3>
+            <p>
+              Your premier destination for luxury and performance vehicles.
+              Experience automotive excellence with us.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#featured">Featured Cars</a></li>
+              <li><a href="#videos">Videos</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Vehicle Sales</a></li>
+              <li><a href="#">Financing</a></li>
+              <li><a href="#">Trade-Ins</a></li>
+              <li><a href="#">Maintenance</a></li>
+              <li><a href="#">Customization</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to receive updates on new arrivals and exclusive offers.
+            </p>
+            <form>
+              <input
+                type="email"
+                placeholder="Your Email"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                  border-radius: 4px;
+                  border: none;
+                "
+              />
+              <button type="submit" class="btn" style="width: 100%">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 Luxury Motors. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".mobile-menu")
+        .addEventListener("click", function () {
+          document.querySelector("nav ul").classList.toggle("active");
+        });
+
+      document.querySelectorAll("nav ul li a").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.querySelector("nav ul").classList.remove("active");
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+      document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
+        wrapper.addEventListener("click", function () {
+          this.classList.add("playing");
+        });
+      });
+
+      // Local Video Play Button Functionality
+      const localVideo = document.getElementById('localVideo');
+      const videoThumbnail = document.getElementById('videoThumbnail');
+      const playBtn = document.getElementById('playBtn');
+
+      if (playBtn && localVideo && videoThumbnail) {
+        playBtn.addEventListener('click', function() {
+          videoThumbnail.style.display = 'none';
+          playBtn.style.display = 'none';
+          localVideo.style.display = 'block';
+          localVideo.play();
+        });
+
+        playBtn.addEventListener('mouseenter', function() {
+          this.style.transform = 'translate(-50%, -50%) scale(1.1)';
+          this.style.backgroundColor = 'var(--highlight)';
+        });
+
+        playBtn.addEventListener('mouseleave', function() {
+          this.style.transform = 'translate(-50%, -50%)';
+          this.style.backgroundColor = 'rgba(233, 69, 96, 0.9)';
+        });
+
+        videoThumbnail.addEventListener('click', function() {
+          videoThumbnail.style.display = 'none';
+          playBtn.style.display = 'none';
+          localVideo.style.display = 'block';
+          localVideo.play();
+        });
+      }
+
+      document
+        .querySelector(".contact-form form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+          this.reset();
+        });
+
+      document
+        .querySelector(".footer-column form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for subscribing to our newsletter!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
+
+
